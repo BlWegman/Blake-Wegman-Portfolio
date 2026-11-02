@@ -4,294 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f7f3">
-  <meta name="description" content="Blake Wegman is a mechanical engineering student at Lehigh University interested in energy, mechanics, and thoughtful design.">
-  <title>Blake Wegman | Mechanical Engineering</title>
+  <meta name="description" content="Meet Blake Wegman, a mechanical engineering student at Lehigh University.">
+  <title>About me | Blake Wegman</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f6f7f3;
-      --ink: #171a18;
-      --muted: #656b65;
-      --line: #d7dad4;
-      --blue: #224bdb;
-      --lime: #d2f36b;
-      --coral: #e78365;
-      --mono: "DM Mono", monospace;
-      --display: "Space Grotesk", sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--display);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    ::selection { background: var(--lime); color: var(--ink); }
-
-    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
-    .mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0; text-transform: uppercase; }
-    .topbar {
-      height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-    }
-    .wordmark { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700; }
-    .monogram {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      background: var(--ink);
-      color: var(--lime);
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-    .nav { display: flex; align-items: center; gap: 34px; }
-    .nav a { font-size: 13px; transition: color 160ms ease; }
-    .nav a:hover, .nav a:focus-visible { color: var(--blue); }
-    .nav .nav-contact { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-
-    .hero {
-      min-height: 610px;
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      gap: 54px;
-      align-items: center;
-      padding-block: 74px 80px;
-    }
-    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--muted); }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #7d9c2c; }
-    h1 {
-      max-width: 650px;
-      margin: 24px 0 22px;
-      font-size: 76px;
-      line-height: .98;
-      letter-spacing: 0;
-      font-weight: 600;
-    }
-    h1 span { color: var(--blue); }
-    .hero-copy { max-width: 490px; color: #4f5650; font-size: 17px; line-height: 1.7; }
-    .hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 30px; }
-    .button {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 0 17px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: white;
-      font-size: 13px;
-      font-weight: 600;
-      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
-    }
-    .button:hover { background: var(--lime); color: var(--ink); transform: translateY(-2px); }
-    .text-link { font-size: 13px; font-weight: 600; }
-    .text-link span { margin-left: 5px; color: var(--blue); }
-    .hero-visual {
-      position: relative;
-      min-height: 444px;
-      overflow: hidden;
-      background: #c9d1c9;
-      isolation: isolate;
-    }
-    .hero-visual::before {
-      position: absolute;
-      z-index: 1;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 55%, rgb(10 19 15 / 52%) 100%);
-      content: "";
-      pointer-events: none;
-    }
-    .hero-visual img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; }
-    .image-index, .image-note { position: absolute; z-index: 2; color: white; }
-    .image-index { top: 17px; left: 18px; padding: 8px 10px; background: var(--lime); color: var(--ink); }
-    .image-note { right: 22px; bottom: 20px; left: 22px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
-    .image-note strong { max-width: 250px; font-size: 19px; line-height: 1.2; }
-    .image-note .mono { color: rgb(255 255 255 / 80%); text-align: right; line-height: 1.7; }
-    .visual-crosshair { position: absolute; z-index: 2; top: 50%; left: 50%; width: 34px; height: 34px; transform: translate(-50%, -50%); }
-    .visual-crosshair::before, .visual-crosshair::after { position: absolute; top: 50%; left: 50%; background: var(--lime); content: ""; transform: translate(-50%, -50%); }
-    .visual-crosshair::before { width: 34px; height: 1px; }
-    .visual-crosshair::after { width: 1px; height: 34px; }
-
-    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: var(--lime); }
-    .ticker-inner { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .ticker-item { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
-    .ticker-item::before { width: 7px; height: 7px; background: var(--blue); content: ""; transform: rotate(45deg); }
-
-    .section { padding-block: 100px; border-bottom: 1px solid var(--line); }
-    .section-heading { display: grid; grid-template-columns: 200px 1fr; gap: 34px; align-items: start; margin-bottom: 44px; }
-    .section-label { padding-top: 9px; color: var(--muted); }
-    h2 { margin: 0; font-size: 42px; line-height: 1.12; font-weight: 500; }
-    .section-intro { max-width: 590px; margin: 13px 0 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
-
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 25px 234px; }
-    .filter {
-      min-height: 34px;
-      padding: 0 12px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font-family: var(--mono);
-      font-size: 10px;
-      text-transform: uppercase;
-      transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
-    }
-    .filter:hover, .filter[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: white; }
-    .project-list { border-top: 1px solid var(--ink); }
-    .project {
-      display: grid;
-      grid-template-columns: 200px 1fr 30px;
-      gap: 34px;
-      align-items: start;
-      padding: 27px 0 29px;
-      border-bottom: 1px solid var(--line);
-      animation: reveal 400ms both;
-    }
-    .project:nth-child(2) { animation-delay: 50ms; }
-    .project:nth-child(3) { animation-delay: 100ms; }
-    .project:nth-child(4) { animation-delay: 150ms; }
-    .project-meta { color: var(--muted); line-height: 1.9; }
-    .project-meta .mono { display: block; }
-    .project-content h3 { margin: 1px 0 8px; font-size: 21px; line-height: 1.3; font-weight: 500; }
-    .project-content p { max-width: 650px; margin: 0; color: #626862; font-size: 14px; line-height: 1.75; }
-    .project-arrow { padding-top: 2px; color: var(--blue); font-size: 20px; }
-    .project[hidden] { display: none; }
-
-    .about-grid { display: grid; grid-template-columns: 200px 1fr 250px; gap: 34px; align-items: start; }
-    .about-copy { max-width: 560px; }
-    .about-copy p { margin: 0 0 17px; color: #565d57; font-size: 15px; line-height: 1.8; }
-    .interest-note { padding: 20px; background: var(--ink); color: white; }
-    .interest-note .mono { color: var(--lime); }
-    .interest-note p { margin: 15px 0 0; font-size: 18px; line-height: 1.45; }
-
-    .skills-layout { display: grid; grid-template-columns: 200px 1fr; gap: 34px; }
-    .skill-groups { border-top: 1px solid var(--ink); }
-    .skill-group { display: grid; grid-template-columns: 190px 1fr; gap: 25px; padding: 23px 0; border-bottom: 1px solid var(--line); }
-    .skill-group h3 { margin: 3px 0 0; font-size: 15px; font-weight: 500; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag { padding: 8px 10px; border: 1px solid var(--line); font-size: 12px; }
-
-    .contact {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: end;
-      padding: 76px 0;
-    }
-    .contact::after { position: absolute; z-index: -1; top: 0; right: 0; width: 28%; height: 100%; background: var(--lime); content: ""; }
-    .contact h2 { max-width: 610px; margin-top: 14px; font-size: 49px; }
-    .contact-copy { max-width: 470px; margin: 14px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .contact-aside { padding: 0 22px 4px; font-family: var(--mono); font-size: 11px; line-height: 1.8; text-transform: uppercase; }
-    footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 20px 28px; border-top: 1px solid var(--line); color: var(--muted); }
-
-    @keyframes reveal { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 800px) {
-      .wrap { width: min(100% - 40px, 600px); }
-      .topbar { height: 66px; }
-      .nav { gap: 17px; }
-      .nav a { font-size: 12px; }
-      .nav a:first-child { display: none; }
-      .nav a:last-child { display: none; }
-      .hero { min-height: auto; grid-template-columns: 1fr; gap: 38px; padding-block: 62px 52px; }
-      h1 { max-width: 560px; font-size: 64px; }
-      .hero-visual { min-height: 390px; }
-      .ticker-inner { min-height: 48px; justify-content: flex-start; overflow-x: auto; }
-      .ticker-item { margin-right: 20px; }
-      .section { padding-block: 72px; }
-      .section-heading, .about-grid, .skills-layout { grid-template-columns: 1fr; gap: 18px; }
-      .section-heading { margin-bottom: 32px; }
-      h2 { font-size: 36px; }
-      .filters { margin-left: 0; }
-      .project { grid-template-columns: 110px 1fr 20px; gap: 17px; }
-      .about-grid { gap: 20px; }
-      .interest-note { max-width: 360px; }
-      .skill-group { grid-template-columns: 140px 1fr; gap: 15px; }
-      .contact { grid-template-columns: 1fr; gap: 22px; padding-block: 60px; }
-      .contact::after { width: 30%; }
-      .contact h2 { font-size: 42px; }
-      .contact-aside { padding-inline: 0; }
-    }
-    @media (max-width: 480px) {
-      .wrap { width: calc(100% - 36px); }
-      .wordmark { gap: 9px; font-size: 12px; }
-      .monogram { width: 31px; height: 31px; }
-      .nav { gap: 13px; }
-      .nav a { font-size: 11px; }
-      .nav .nav-contact { gap: 4px; }
-      .wordmark > span:last-child span { display: none; }
-      .hero { gap: 30px; padding-block: 51px 38px; }
-      h1 { margin-top: 19px; font-size: 51px; }
-      .hero-copy { font-size: 15px; }
-      .hero-actions { gap: 15px; }
-      .hero-visual { min-height: 315px; }
-      .image-note strong { font-size: 16px; }
-      .image-note .mono { font-size: 9px; }
-      .ticker-inner { gap: 20px; }
-      .ticker-item { font-size: 9px; }
-      .section { padding-block: 58px; }
-      h2 { font-size: 31px; }
-      .project { grid-template-columns: 1fr 20px; gap: 5px 12px; padding-block: 20px; }
-      .project-meta { grid-column: 1; grid-row: 1; }
-      .project-content { grid-column: 1; grid-row: 2; }
-      .project-arrow { grid-column: 2; grid-row: 1 / span 2; }
-      .project-content h3 { font-size: 19px; }
-      .skill-group { grid-template-columns: 1fr; gap: 13px; }
-      .contact h2 { font-size: 36px; }
-      footer { flex-direction: column; gap: 6px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar wrap">
-    <a class="wordmark" href="#home" aria-label="Blake Wegman, home">
+    <a class="wordmark" href="index.html" aria-label="Blake Wegman, About me">
       <span class="monogram" aria-hidden="true">BW</span>
-      <span>Blake Wegman <span style="font-weight:400;color:#656b65">/ engineering</span></span>
+      <span>Blake Wegman <span class="wordmark-subtitle">/ engineering</span></span>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="#work">Experience</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">&#8599;</span></a>
-      <a href="https://www.linkedin.com/in/blakewegman?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+      <a class="active" href="index.html" aria-current="page">About me</a>
+      <a href="experience.html">Experience</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap" id="home" aria-labelledby="hero-title">
-      <div>
+    <section class="page-hero wrap" aria-labelledby="page-title">
+      <div class="page-copy">
         <div class="eyebrow mono"><span class="status-dot" aria-hidden="true"></span> Mechanical engineering student <span aria-hidden="true">/</span> Lehigh University</div>
-        <h1 id="hero-title">Make it move.<br>Make it <span>matter.</span></h1>
-        <p class="hero-copy">I'm Blake, a first-year mechanical engineering student drawn to the systems behind energy, motion, and a better-built world.</p>
-        <div class="hero-actions">
-          <a class="button" href="#work">Explore my experience <span aria-hidden="true">&#8594;</span></a>
-          <a class="text-link" href="#about">A little about me <span aria-hidden="true">&#8595;</span></a>
+        <h1 id="page-title">A little <em>about me.</em></h1>
+        <p class="hero-copy">I'm Blake, a first-year mechanical engineering student at Lehigh University. I'm drawn to the systems behind energy, motion, and a better-built world.</p>
+        <div class="contact-details" aria-label="Contact information">
+          <a href="mailto:blakewegman07@gmail.com">blakewegman07@gmail.com</a>
+          <a href="tel:+12036450283">203-645-0283</a>
         </div>
       </div>
       <div class="hero-visual">
         <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Engineers collaborating at a mechanical design workstation" fetchpriority="high">
-        <span class="image-index mono">01 / FIELD NOTES</span>
-        <span class="visual-crosshair" aria-hidden="true"></span>
+        <span class="image-index mono">01 / ABOUT ME</span>
         <div class="image-note">
           <strong>Curious about how things work, and how to make them work better.</strong>
-          <span class="mono">Bethlehem, PA<br>40.6084 N / 75.3785 W</span>
+          <span class="mono">Bethlehem, PA<br>Lehigh University</span>
         </div>
       </div>
     </section>
@@ -305,50 +56,12 @@
       </div>
     </div>
 
-    <section class="section wrap" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <div class="section-label mono">01 / Experience</div>
-        <div>
-          <h2 id="work-title">Learning by doing.</h2>
-          <p class="section-intro">A few of the teams and experiences shaping how I think about engineering, design, and impact.</p>
-        </div>
-      </div>
-      <div class="filters" role="group" aria-label="Filter experience">
-        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
-        <button class="filter" type="button" data-filter="community" aria-pressed="false">Community</button>
-        <button class="filter" type="button" data-filter="internship" aria-pressed="false">Internship</button>
-      </div>
-      <div class="project-list" aria-live="polite">
-        <article class="project" data-category="engineering">
-          <div class="project-meta"><span class="mono">Lehigh University</span><span class="mono">Formula SAE / Chassis</span></div>
-          <div class="project-content"><h3>Formula SAE</h3><p>Part of the chassis group, exploring how structural design, weight, and engineering decisions come together in a competition vehicle.</p></div>
-          <span class="project-arrow" aria-hidden="true">&#8599;</span>
-        </article>
-        <article class="project" data-category="community">
-          <div class="project-meta"><span class="mono">Sustainable Engineering Club</span><span class="mono">Creek Guard / Waterways</span></div>
-          <div class="project-content"><h3>Creek Guard</h3><p>Working with the Creek Guard program on pollution elimination, bringing an environmental perspective to my engineering interests.</p></div>
-          <span class="project-arrow" aria-hidden="true">&#8599;</span>
-        </article>
-        <article class="project" data-category="internship">
-          <div class="project-meta"><span class="mono">HVAC company</span><span class="mono">Internship / Building systems</span></div>
-          <div class="project-content"><h3>HVAC design internship</h3><p>Gained practical exposure to HVAC design and the building systems that shape everyday comfort and energy use.</p></div>
-          <span class="project-arrow" aria-hidden="true">&#8599;</span>
-        </article>
-        <article class="project" data-category="community">
-          <div class="project-meta"><span class="mono">Lehigh University</span><span class="mono">Campus / Ministry</span></div>
-          <div class="project-content"><h3>Catholic campus ministry</h3><p>Making space for community, reflection, and service alongside the pace of campus and engineering life.</p></div>
-          <span class="project-arrow" aria-hidden="true">&#8599;</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section wrap" id="about" aria-labelledby="about-title">
+    <section class="section wrap" aria-labelledby="about-title">
       <div class="about-grid">
-        <div class="section-label mono">02 / Perspective</div>
+        <div class="section-label mono">About me</div>
         <div class="about-copy">
           <h2 id="about-title">Engineer with<br>an eye on impact.</h2>
-          <p>I'm a first-year student at Lehigh University studying mechanical engineering. I like the parts of engineering where careful design meets the physical world: forces, motion, energy, materials, and the systems built around them.</p>
+          <p>I like the parts of engineering where careful design meets the physical world: forces, motion, energy, materials, and the systems built around them.</p>
           <p>Between Formula SAE, sustainable engineering, and an HVAC internship, I'm building a broad foundation and figuring out where I can make the most useful contribution.</p>
         </div>
         <aside class="interest-note">
@@ -357,68 +70,11 @@
         </aside>
       </div>
     </section>
-
-    <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <div class="skills-layout">
-        <div class="section-label mono">03 / Toolkit</div>
-        <div>
-          <h2 id="skills-title">Tools &amp; skills.</h2>
-          <div class="skill-groups" style="margin-top:30px">
-            <div class="skill-group">
-              <h3>Design &amp; modeling</h3>
-              <div class="skill-tags"><span class="skill-tag">3D modeling</span><span class="skill-tag">SolidWorks</span><span class="skill-tag">AutoCAD</span></div>
-            </div>
-            <div class="skill-group">
-              <h3>Building systems</h3>
-              <div class="skill-tags"><span class="skill-tag">HVAC design</span></div>
-            </div>
-            <div class="skill-group">
-              <h3>Areas of interest</h3>
-              <div class="skill-tags"><span class="skill-tag">Energy</span><span class="skill-tag">Mechanics</span><span class="skill-tag">Sustainable engineering</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap" id="certifications" aria-labelledby="certifications-title">
-      <div class="skills-layout">
-        <div class="section-label mono">04 / Credentials</div>
-        <div>
-          <h2 id="certifications-title">Certifications &amp; training.</h2>
-          <p class="section-intro">Certifications and technical training will be listed here as they are completed.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
-      <div>
-        <span class="mono">05 / Next steps</span>
-        <h2 id="contact-title">Good engineering starts with a good question.</h2>
-        <p class="contact-copy">Based at Lehigh University in Bethlehem, Pennsylvania. Interested in opportunities and conversations around mechanical design, energy, and engineering in practice.</p>
-      </div>
-      <div class="contact-aside">Mechanical engineering<br>Lehigh University<br>Bethlehem, Pennsylvania<br><a href="https://www.linkedin.com/in/blakewegman?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Connect on LinkedIn &#8599;</a></div>
-    </section>
   </main>
 
   <footer class="wrap mono">
     <span>Blake Wegman <span aria-hidden="true">/</span> Mechanical engineering</span>
     <span>Lehigh University <span aria-hidden="true">/</span> Bethlehem, PA</span>
   </footer>
-
-  <script>
-    const filterButtons = document.querySelectorAll(".filter");
-    const projects = document.querySelectorAll(".project");
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const selectedFilter = button.dataset.filter;
-        filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-        projects.forEach((project) => {
-          project.hidden = selectedFilter !== "all" && project.dataset.category !== selectedFilter;
-        });
-      });
-    });
-  </script>
 </body>
 </html>

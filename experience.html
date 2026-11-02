@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f3">
+  <meta name="description" content="Blake Wegman's engineering, internship, and community experience.">
+  <title>Experience | Blake Wegman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="wordmark" href="index.html" aria-label="Blake Wegman, About me"><span class="monogram" aria-hidden="true">BW</span><span>Blake Wegman <span class="wordmark-subtitle">/ engineering</span></span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">About me</a>
+      <a class="active" href="experience.html" aria-current="page">Experience</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main class="section wrap" aria-labelledby="page-title">
+    <div class="section-heading">
+      <div class="section-label mono">02 / Experience</div>
+      <div>
+        <h1 id="page-title">Learning by doing.</h1>
+        <p class="section-intro">A few of the teams and experiences shaping how I think about engineering, design, and impact.</p>
+      </div>
+    </div>
+    <div class="filters" role="group" aria-label="Filter experience">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+      <button class="filter" type="button" data-filter="community" aria-pressed="false">Community</button>
+      <button class="filter" type="button" data-filter="internship" aria-pressed="false">Internship</button>
+    </div>
+    <div class="project-list" aria-live="polite">
+      <article class="project" data-category="engineering">
+        <div class="project-meta"><span class="mono">Lehigh University</span><span class="mono">Formula SAE / Chassis</span></div>
+        <div class="project-content"><h2>Formula SAE</h2><p>Part of the chassis group, exploring how structural design, weight, and engineering decisions come together in a competition vehicle.</p></div>
+        <span class="project-arrow" aria-hidden="true">&#8599;</span>
+      </article>
+      <article class="project" data-category="community">
+        <div class="project-meta"><span class="mono">Sustainable Engineering Club</span><span class="mono">Creek Guard / Waterways</span></div>
+        <div class="project-content"><h2>Creek Guard</h2><p>Working with the Creek Guard program on pollution elimination, bringing an environmental perspective to my engineering interests.</p></div>
+        <span class="project-arrow" aria-hidden="true">&#8599;</span>
+      </article>
+      <article class="project" data-category="internship">
+        <div class="project-meta"><span class="mono">HVAC company</span><span class="mono">Internship / Building systems</span></div>
+        <div class="project-content"><h2>HVAC design internship</h2><p>Gained practical exposure to HVAC design and the building systems that shape everyday comfort and energy use.</p></div>
+        <span class="project-arrow" aria-hidden="true">&#8599;</span>
+      </article>
+      <article class="project" data-category="community">
+        <div class="project-meta"><span class="mono">Lehigh University</span><span class="mono">Campus / Ministry</span></div>
+        <div class="project-content"><h2>Catholic campus ministry</h2><p>Making space for community, reflection, and service alongside the pace of campus and engineering life.</p></div>
+        <span class="project-arrow" aria-hidden="true">&#8599;</span>
+      </article>
+    </div>
+  </main>
+  <footer class="wrap mono"><span>Blake Wegman <span aria-hidden="true">/</span> Mechanical engineering</span><span>Lehigh University <span aria-hidden="true">/</span> Bethlehem, PA</span></footer>
+  <script>
+    const filterButtons = document.querySelectorAll(".filter");
+    const experiences = document.querySelectorAll(".project");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+        filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        experiences.forEach((experience) => {
+          experience.hidden = selectedFilter !== "all" && experience.dataset.category !== selectedFilter;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
